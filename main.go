@@ -43,9 +43,9 @@ func main() {
 			var responseText string
 			switch update.CallbackQuery.Data {
 			case "btn1":
-				responseText = "Вы нажали кнопку 1"
+				responseText = "Вы нажали кнопку 11"
 			case "btn2":
-				responseText = "Вы нажали кнопку 2"
+				responseText = "Вы нажали кнопку 22"
 			default:
 				responseText = "Неизвестная кнопка"
 			}
