@@ -3,10 +3,15 @@ package main
 import (
 	"github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"log"
+	"os"
 )
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI("6089659023:AAHz5Oct6l0Dw9Yr6fj4gCEgm-e6I-IHrGc")
+	botToken := os.Getenv("TELEGRAM_BOT_TOKEN")
+	if botToken == "" {
+		log.Panic("env TELEGRAM_BOT_TOKEN not defined")
+	}
+	bot, err := tgbotapi.NewBotAPI(botToken)
 	if err != nil {
 		log.Panic(err)
 	}
